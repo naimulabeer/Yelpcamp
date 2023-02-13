@@ -1,0 +1,51 @@
+DEPLOY**********
+
+
+-> Mongo Atlas is what we are going to use here.
+
+-> Create a Mongo Atlas account
+-> upon creating the account now make a cluster which is free and shared.
+-> From Database access Add new Database with username new-user-117 and password: ZuNF33rT6TV2ek7U
+-> Use read and write only and rest to default.
+
+-> Then click Network access and add an IP address.
+-> There I just add our current IP address and confirm (********* add access from anywhere since our current IP doesnt 
+work here *********)
+-> And then we need to connect to my cluster. then we need to specify how we want to connect and we will connect it 
+through an application. we connect node and basically this will give us an url. we copy the url.
+(mongodb+srv://new-user-117:<password>@cluster0.ygqixms.mongodb.net/?retryWrites=true&w=majority) and I'm gonna put 
+that in my .env file and in password I'm going to put my actual password and save it as DB_URL.
+
+-> Then in my app.js we will use process.env.DB_URL as the dbUrl and call it when I'm connecting to mongoose.
+-> We will see in our console mongoose connected then in our YELPCAMP we wont see any campgrounds and that's good
+news. that is the database we created for production purpose for deploying to hiroku or wherever we want to deploy.
+as for now we will use mongoose connection locally and comment out dbUrl. 
+
+
+#### Using Mongo as our Session Store
+
+npm i connect-mongo   ---> installl
+
+-> require it in app.
+-> use MongoStore before creating session and use mongoUrl, secret and touchAfter(for lazy sessions). 
+Read the docs -------->  https://www.npmjs.com/package/connect-mongo
+
+-> Then for any session errors store.on any error and console.log those errors.
+-> pass the store into our sessionConfig where we created session. 
+-> Now in our mongoDB yelp-camp database we see a collection of sessions been created by mongo. they have expiry 
+date automatically expire after 7days of session creation.
+
+
+##### Heroku Setup
+
+-> DEPLOYMENT APP 
+( https://www.heroku.com/ )
+-> Create an account
+
+-> After account creation install Heroku CLI. 
+https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli
+
+-> after installing CLI ,   in git bash we use------->  heroku login 
+and press enter and browser popup and in browser we click login and it will successfully logged in to heroku.
+
+

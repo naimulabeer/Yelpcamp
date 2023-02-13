@@ -1,0 +1,38 @@
+<% layout('layouts/boilerplate') %>
+
+
+<div class="container d-flex justify-content-center align-items-center mt-5">
+    <div class="row">
+        <div class="col-md-6" style="width: 20rem">
+            <div class="card shadow">
+                <img src="https://res.cloudinary.com/dlohot2ln/image/upload/v1676120602/Covert_20_3A_20South_20Haven_20KOA_w19ttj.png"
+                alt="" class="card-img-top" />
+                <div class="card-body">
+                    <h5 class="card-title">Login</h5>
+                    <form action="" class="validated-form" novalidate method="post">
+                        <div class="mb-3">
+                            <label class="form-label" for="username">Username</label>
+                            <input class="form-control" type="text" name="username" id="username" autofocus required>
+                            <div class="valid-feedback">
+                                Looks Fine!
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label class="form-label" for="password">Password</label>
+                            <input class="form-control" type="password" name="password" id="password" required>
+                            <div class="valid-feedback">
+                                Looks Fine!
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-success">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
