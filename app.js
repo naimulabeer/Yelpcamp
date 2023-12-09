@@ -125,9 +125,9 @@ app.use((err, req, res, next) => {
 });
 
 ////listen port////
-
-app.listen(3000, () => {
-  console.log("Yelpcamp server on port 3000!");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Yelpcamp server on port ${port}!`);
 });
 
 ///////////////////
